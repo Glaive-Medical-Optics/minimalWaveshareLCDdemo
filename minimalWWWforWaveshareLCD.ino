@@ -1,8 +1,8 @@
 /*****************************************************************************
 * | File        :   minimalWWWforWaveshareLCD (Minimal Window Within Window)
 * | Author      :   Glaive softwear team
-* | This version:   V1.0
-* | Date        :   17-June-2024
+* | This version:   V1.1
+* | Date        :   18-July-2024
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documnetation files (the "Software"), to deal
@@ -19,6 +19,31 @@
 # THE SOFTWARE.
 #
 ******************************************************************************/
+
+/*
+ * 
+ *    This sketch displays a fish or a stylized "G" that moves around
+ *    on the Waveshare LCD module using the SPI interface on an Arduino Giga R1 board.
+ *    
+ *    The pin connections must be set up as follows:
+ *    
+ *    LCD pin     wire color    Arduino pin
+ *    -------     ----------    -----------
+ *    VCC         purple        5V            required
+ *    GND         white         GND           required
+ *    DIN         green         D90 (COPI)    required  (on SPI 6-pin connector)
+ *    CLK         orange        D91 (SCK)     required  (on SPI 6-pin connector)
+ *    CS          yellow        D10           optional
+ *    DC          blue          D7            optional
+ *    RST         brown         D8            optional
+ *    BL          gray          D9            optional
+ *    
+ *    This demo is set up to use pins D7, D8, D9, and D10 as shown in the table above.
+ *    You can replace these pins by any digital pins.
+ *    To do that, specify the pins you are using in the file DEV_Config.h.
+ *    
+ *    This program is Free Software and has ABSOLUTELY NO WARRANTY.
+ */
 
 #include "LCD_Driver.h"
 
@@ -37,7 +62,7 @@ void setup()
   LCD_Init();
   Serial.print("LCD_Init succeeded.\n");
   delay(2000);
-  //quickMoveGlaiveG();
+  //quickMoveG();       // Uncomment this line to move a stylized G on the screen
   createWWW(WWW_startCol,WWW_startRow,WWW_width,WWW_height);
   
   Serial.print("exiting setup.\n");

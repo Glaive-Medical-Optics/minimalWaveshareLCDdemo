@@ -25,9 +25,9 @@
 ******************************************************************************/
 
 
-void quickMoveGlaiveG()
+void quickMoveG()
 {
-  const unsigned short *logo = GlaiveG_70x70;
+  const unsigned short *logo = G_70x70;
   unsigned short *logoPtr;
   unsigned long row, col;
   unsigned long dur;
@@ -36,8 +36,8 @@ void quickMoveGlaiveG()
   int numberOfFrames = 120;
   int startX = 100;
   int startY = 30;
-  int width = GLAIVE70x70_WIDTH;
-  int height = GLAIVE70x70_HEIGHT;
+  int width = G70x70_WIDTH;
+  int height = G70x70_HEIGHT;
   unsigned long time1, time2;
   double dif;
   char buf[10];
@@ -46,7 +46,7 @@ void quickMoveGlaiveG()
 
   time1=micros();
 
-  // Draw a 70x70 Glaive logo 100 times
+  // Draw a 70x70 stylized color G 100 times
 
   for (i=1; i<=numberOfFrames; i++)
   {
